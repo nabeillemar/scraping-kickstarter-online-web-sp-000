@@ -17,7 +17,7 @@ def create_project_hash
   projects = {}
   
   #Iterate through the projects
-  kickstarter.css("li.project.grid_4").each do |project|
+  kickstarter.css("li.project.grid_4").each do |project| 
     title = project.css("h2.bbcard_name strong a").text #make each project title a key and value is another hash with each of our other data points as keys.
     projects[title.to_sym] = { #converting to symbols b/c they make better hash keys than strings 
       :image_link => project.css("div.project-thumbnail a img").attribute("src").value, 
